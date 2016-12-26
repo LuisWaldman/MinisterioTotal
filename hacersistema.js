@@ -1,3 +1,4 @@
+/*Actualizado*/
 var parseString = require('xml2js').parseString;
 var fs = require('fs');
 var hacerarchivo = require('./hacerarchivo');
