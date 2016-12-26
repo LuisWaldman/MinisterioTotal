@@ -1,0 +1,16 @@
+<div>
+<form>
+<div class='form-group'>
+<label for='Cliente'>Nombre</label>
+<input type='text' class='form-control' [(ngModel)]='model.Cliente' id='Cliente' name='Cliente' #Cliente='ngModel' required='true'/>
+<div [hidden]='Cliente.valid || Cliente.pristine' class='alert alert-danger'>Nombre no es valido</div>
+</div>
+<input type='reset' value='Cancelar' class='btn btn-default' id='res_button' name='res_button'/>
+<input type='submit' value='Guardar' class='btn btn-default' id='subm_button' name='subm_button'/>
+</form>
+<p-dataTable>
+<p-column field='Cantidad' header='Cantidad'/>
+<p-column field='DescripcionProducto' header='Descripcion Producto'/>
+<p-column field='Precio' header='Precio'/>
+</p-dataTable>
+</div>

@@ -1,0 +1,59 @@
+<div>
+<form>
+<div class='form-group'>
+<label for='usuario'>Usuario</label>
+<input type='text' class='form-control' [(ngModel)]='model.usuario' id='usuario' name='usuario' #usuario='ngModel'/>
+<div [hidden]='usuario.valid || usuario.pristine' class='alert alert-danger'>Usuario no es valido</div>
+</div>
+<div class='form-group'>
+<label for='clave'>PassWord</label>
+<input type='password' class='form-control' [(ngModel)]='model.clave' id='clave' name='clave' #clave='ngModel'/>
+<div [hidden]='clave.valid || clave.pristine' class='alert alert-danger'>PassWord no es valido</div>
+</div>
+<input type='reset' value='Cancelar' class='btn btn-default' id='res_button' name='res_button'/>
+<input type='submit' value='Guardar' class='btn btn-default' id='subm_button' name='subm_button'/>
+</form>
+<form>
+<div class='form-group'>
+<label for='nombre'>Nombre</label>
+<input type='text' class='form-control' [(ngModel)]='objPersona.nombre' id='nombre' name='nombre' #nombre='ngModel' required='true'/>
+<div [hidden]='nombre.valid || nombre.pristine' class='alert alert-danger'>Nombre no es valido</div>
+</div>
+<div class='form-group'>
+<label for='min4a10'>Apellido</label>
+<input type='text' class='form-control' [(ngModel)]='objPersona.min4a10' id='min4a10' name='min4a10' #min4a10='ngModel' required='true' pattern='.{4,10}'/>
+<div [hidden]='min4a10.valid || min4a10.pristine' class='alert alert-danger'>Apellido no es valido</div>
+</div>
+<div class='form-group'>
+<label for='Provincia'>Provincia</label>
+<select class='form-control' [(ngModel)]='objPersona.Provincia' name='Provincia' id='Provincia' #Provincia='ngModel' (change)='cambio_Provincia()'>
+<option *ngFor='let vk of Provincias' [value]='vk.Key'>{{ vk.Value }}</option>
+</select>
+<div [hidden]='Provincia.valid || Provincia.pristine' class='alert alert-danger'>Provincia no es valido</div>
+</div>
+<div class='form-group'>
+<label for='Municipio'>Municipio</label>
+<select class='form-control' [(ngModel)]='objPersona.Municipio' name='Municipio' id='Municipio' #Municipio='ngModel'>
+<option *ngFor='let vk of Municipios' [value]='vk.Key'>{{ vk.Value }}</option>
+</select>
+<div [hidden]='Municipio.valid || Municipio.pristine' class='alert alert-danger'>Municipio no es valido</div>
+</div>
+<div class='form-group'>
+<label for='nrodocumento'>Numero de Documento</label>
+<input type='number' class='form-control' [(ngModel)]='objPersona.nrodocumento' id='nrodocumento' name='nrodocumento' #nrodocumento='ngModel'/>
+<div [hidden]='nrodocumento.valid || nrodocumento.pristine' class='alert alert-danger'>Numero de Documento no es valido</div>
+</div>
+<div class='form-group'>
+<label for='fechanacimiento'>Fecha de Nacimiento</label>
+<input type='date' class='form-control' [(ngModel)]='objPersona.fechanacimiento' id='fechanacimiento' name='fechanacimiento' #fechanacimiento='ngModel'/>
+<div [hidden]='fechanacimiento.valid || fechanacimiento.pristine' class='alert alert-danger'>Fecha de Nacimiento no es valido</div>
+</div>
+<div class='form-group'>
+<label for='clave'>Clave</label>
+<input type='password' class='form-control' [(ngModel)]='objPersona.clave' id='clave' name='clave' #clave='ngModel'/>
+<div [hidden]='clave.valid || clave.pristine' class='alert alert-danger'>Clave no es valido</div>
+</div>
+<input type='reset' value='Cancelar' class='btn btn-default' id='res_button' name='res_button'/>
+<input type='submit' value='Guardar' class='btn btn-default' id='subm_button' name='subm_button'/>
+</form>
+</div>

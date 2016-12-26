@@ -1,0 +1,83 @@
+<sistema menutipo="lateral">
+   <cabecera template="template_ca_reorep"/>
+
+   <menus>
+        <menu texto="Inicio" pantalla="Inicio"/>
+        <menu texto="Otras cosas">
+            <submenu texto="Acerca de.." pantalla="AcercaDe"/>
+            <submenu texto="Datos Persona" pantalla="DatosPersona"/>
+        </menu>
+        <menu texto="Salir" pantalla="Salir"/>
+        <menu texto="Datos Generales" pantalla="DatosGenerales"/>
+        <menu texto="Login" pantalla="Login"/>
+   </menus>
+
+
+
+   <pantallas pantallainicial="Inicio">
+
+
+   <pantalla nombre="Inicio">
+     <control tipo="formulario" clase="Factura">
+        <control tipo="texto" valor="Cliente" descripcion="Nombre" requerido="true"/>
+     </control>
+     <control tipo="grilla" clase='FacturaDetalle' modelo="">
+        <columna valor="Cantidad"/>
+        <columna valor="DescripcionProducto" descripcion='Descripcion Producto'/>
+        <columna valor="Precio"/>
+     </control>
+   </pantalla>
+
+        <pantalla nombre="DatosPersona">
+        
+        <control tipo="formulario" clase="Login">
+               <control tipo="texto"    valor="usuario" descripcion="Usuario"/>
+               <control tipo="password" valor="clave" descripcion="PassWord"/>
+            </control>
+            
+        <control tipo="formulario" modelo="objPersona" clase="Persona">
+        <!--
+                    tipo posibles
+                    =======
+
+                    texto
+                    numero
+                    date
+                    email
+                    url
+        -->
+        <control tipo="texto" valor="nombre" descripcion="Nombre" requerido="true"/>        
+        <control tipo="texto" valor="min4a10" minimo="4" maximo="10" descripcion="Apellido" validacion="requerido"/>
+        
+        <control tipo="combo" valor="Provincia" descripcion="Provincia" clase="Provincia"/>
+        <control tipo="combo" valor="Municipio" depende="Provincia" descripcion="Municipio" clase="Municipio"/>
+
+        <control tipo="numero" valor="nrodocumento" descripcion="Numero de Documento"/>
+        <control tipo="fecha" valor="fechanacimiento" descripcion="Fecha de Nacimiento"/>
+        <control tipo="password" valor="clave" descripcion="Clave"/>
+        
+        </control>
+        </pantalla>
+        <pantalla nombre="AcercaDe">
+                <control tipo="formulario" clase="Persona">
+             <control tipo="combo" valor="Provincia" descripcion="Provincia" clase="Provincia"/>
+             <control tipo="combo" valor="Municipio" depende="Provincia" descripcion="Municipio" clase="Municipio"/>
+             <control tipo="combo" valor="Localidad" depende="Municipio" descripcion="Localidad" clase="Localidad"/>
+        </control>
+
+        </pantalla>
+        
+        <pantalla nombre="Salir"></pantalla>
+        <pantalla nombre="DatosGenerales">
+
+        </pantalla>
+        <pantalla nombre="Login">
+            <control tipo="formulario" clase="Login">
+               <control tipo="texto"    valor="usuario" descripcion="Usuario"/>
+               <control tipo="password" valor="clave" descripcion="PassWord"/>
+            </control>
+        </pantalla>
+        
+    </pantallas>
+    <pie template="template_pie_reorep"/>
+</sistema>

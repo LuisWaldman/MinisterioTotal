@@ -1,0 +1,1 @@
+export class KeyValue { constructor(public Key: string, public Value: any) {}}

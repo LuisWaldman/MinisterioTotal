@@ -1,0 +1,27 @@
+<div>
+<form>
+<div class='form-group'>
+<label for='Provincia'>Provincia</label>
+<select class='form-control' [(ngModel)]='model.Provincia' name='Provincia' id='Provincia' #Provincia='ngModel' (change)='cambio_Provincia()'>
+<option *ngFor='let vk of Provincias' [value]='vk.Key'>{{ vk.Value }}</option>
+</select>
+<div [hidden]='Provincia.valid || Provincia.pristine' class='alert alert-danger'>Provincia no es valido</div>
+</div>
+<div class='form-group'>
+<label for='Municipio'>Municipio</label>
+<select class='form-control' [(ngModel)]='model.Municipio' name='Municipio' id='Municipio' #Municipio='ngModel' (change)='cambio_Municipio()'>
+<option *ngFor='let vk of Municipios' [value]='vk.Key'>{{ vk.Value }}</option>
+</select>
+<div [hidden]='Municipio.valid || Municipio.pristine' class='alert alert-danger'>Municipio no es valido</div>
+</div>
+<div class='form-group'>
+<label for='Localidad'>Localidad</label>
+<select class='form-control' [(ngModel)]='model.Localidad' name='Localidad' id='Localidad' #Localidad='ngModel'>
+<option *ngFor='let vk of Localidads' [value]='vk.Key'>{{ vk.Value }}</option>
+</select>
+<div [hidden]='Localidad.valid || Localidad.pristine' class='alert alert-danger'>Localidad no es valido</div>
+</div>
+<input type='reset' value='Cancelar' class='btn btn-default' id='res_button' name='res_button'/>
+<input type='submit' value='Guardar' class='btn btn-default' id='subm_button' name='subm_button'/>
+</form>
+</div>

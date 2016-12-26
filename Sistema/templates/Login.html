@@ -1,0 +1,16 @@
+<div>
+<form>
+<div class='form-group'>
+<label for='usuario'>Usuario</label>
+<input type='text' class='form-control' [(ngModel)]='model.usuario' id='usuario' name='usuario' #usuario='ngModel'/>
+<div [hidden]='usuario.valid || usuario.pristine' class='alert alert-danger'>Usuario no es valido</div>
+</div>
+<div class='form-group'>
+<label for='clave'>PassWord</label>
+<input type='password' class='form-control' [(ngModel)]='model.clave' id='clave' name='clave' #clave='ngModel'/>
+<div [hidden]='clave.valid || clave.pristine' class='alert alert-danger'>PassWord no es valido</div>
+</div>
+<input type='reset' value='Cancelar' class='btn btn-default' id='res_button' name='res_button'/>
+<input type='submit' value='Guardar' class='btn btn-default' id='subm_button' name='subm_button'/>
+</form>
+</div>
