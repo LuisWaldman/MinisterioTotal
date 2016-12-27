@@ -103,10 +103,19 @@ HacerControlGrilla = function(control, archivoTS)
                 field: valor,
                 header: descripcion
         });
+        newCol.autocierre =  false;
         columnas[columnas.length] = newCol;
     }
 
     var ret = TagHtml('p-dataTable', {}, columnas);
+    if (control.$.modelo)
+    {
+        ret.atributos["[value]"] =  control.$.modelo;
+        archivoTS.agregarImport(control.$.clase);
+        archivoTS.AddAtributo(control.$.modelo,control.$.clase + '[]');
+    }
+
+    
     //console.log(control);
     return ret;
 }

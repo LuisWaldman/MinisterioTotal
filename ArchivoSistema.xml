@@ -18,14 +18,21 @@
 
 
    <pantalla nombre="Inicio">
-     <control tipo="formulario" clase="Factura">
-        <control tipo="texto" valor="Cliente" descripcion="Nombre" requerido="true"/>
+    <control tipo="formulario" clase="FacturaDetalle" modelo="nuevoDetalle">
+        <control tipo="numero" valor="Cantidad" descripcion="Cantidad" requerido="true"/>
+        <control tipo="texto" valor="DescripcionProducto" descripcion="Descripcion Producto" requerido="true"/>
+        <control tipo="numero" valor="Precio" descripcion="Precio" requerido="true"/>
+        <control tipo="texto" valor="detalle" descripcion="detalle"/>
      </control>
-     <control tipo="grilla" clase='FacturaDetalle' modelo="">
+     <control tipo="grilla" clase='FacturaDetalle' modelo="Detalles">
         <columna valor="Cantidad"/>
         <columna valor="DescripcionProducto" descripcion='Descripcion Producto'/>
         <columna valor="Precio"/>
      </control>
+      <control tipo="formulario" clase="Factura">
+        <control tipo="texto" valor="Cliente" descripcion="Nombre" requerido="true"/>
+     </control>
+    
    </pantalla>
 
         <pantalla nombre="DatosPersona">
